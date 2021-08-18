@@ -1,0 +1,46 @@
+
+{% extends  'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load markdown_deux_tags %}
+{% block content %}
+<p id="inner">Problem details</p>
+<div class="">
+	<div class="content is-pulled-left show-white-space" id="prob-detail">
+		<div class="">
+			<article>
+				<h2>{{problem.difficulty}} - {{ problem.title }}</h2>
+				Hello.
+				<div>{{ problem.Description | markdown }}</div>
+			</article>
+			<a href="{% url 'problem_delete' problem.pk %}"><button>Delete Problem</button></a>
+			<a href="{% url 'problem_edit' problem.pk %}"><button>Edit Problem</button></a>
+		</div>
+	</div>
+
+<div class="is-pulled-right">
+<form method="post">
+	{% csrf_token %}
+
+	{{ form|crispy }}
+	<button type="submit">Comment</button>
+</form>
+<div style="">
+{% for comment in comments	%}
+<div class="textarea">
+	{% if comment.author == problem.author %}
+	<div class="is-pulled-right">
+		<ul>{{comment.author}} said<br> {{comment.comment}}</ul>
+	</div>
+	{% else %}
+	<div class="is-pulled-left">
+		<ul>{{comment.author}} said <br> {{comment.comment}}</ul>
+	</div>
+	{% endif %}
+
+</div>
+{% endfor %}
+</div>
+</div>
+</div>	
+{% endblock content%}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+{% if user.is_authenticated %}
+<p>Hi {{ user.username }}, you are already logged in !</p>
+<br>Go to <a href="{% url 'home' %}">Home</a>
+{% else %}
+<h2>Log In</h2>
+<form method="post">
+	{% csrf_token %}
+	{{ form|crispy }}
+	<br>
+	<button type="submit">Log In</button>
+</form>
+<div class="content is-small">
+<p><a href="{% url 'password_reset' %}">forgot password?</a></p>
+<p>Don't have an account? <br> <a href="{% url 'signup' %}">Signup</a> And contact a senior coordinator</p>
+</div>
+{% endif %}
+
+{% endblock content %}

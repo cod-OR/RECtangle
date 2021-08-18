@@ -1,0 +1,37 @@
+
+{% load static %}
+
+<html>
+<head>
+	<title>{RECtangle} - A mini Polygon</title>
+	<link rel="stylesheet" href="{% static 'styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+</head>
+<body>
+	<div>
+		<header class="header-fixed">
+			<div class="header-limiter">
+				<h1><a href="{% url 'home' %}">REC<span>tangle</span></a></h1>
+				<nav>
+				<div class="">	
+					{% if user.is_authenticated %}
+					
+					<p>Hi {{ user.username }}!  <a href="# " style="color: red">Log out</a><a href="#"  style="color: grey;">Change Password</a></p>
+					{% else %}
+					<p>You are not logged in.
+					<a href="{% url 'login' %}">Log In</a></p>
+					
+					{% endif %}
+				</div>
+				
+				</nav>
+
+			</div>
+		</header>
+		<div id="allblocks">
+		{% block content %}
+		{% endblock content %}
+		</div>
+	</div>
+</body>
+</html>

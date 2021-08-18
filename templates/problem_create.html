@@ -1,0 +1,19 @@
+
+{% extends  'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<p id="inner">Create Problem</p>
+<div id="outer">
+	<div id="">
+<form method="post">
+	{% csrf_token %}
+	{{ form.media }}
+	{{ form|crispy }}
+	<br>
+	<button type="submit">Propose</button>
+</form>
+</div>
+</div>
+{% endblock content%}
