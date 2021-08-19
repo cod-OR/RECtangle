@@ -38,14 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
-    # 'accounts',
+    'accounts',
 
     'crispy_forms',
     'pagedown',
     'markdown_deux',
 ]
 
-# AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 
 MIDDLEWARE = [

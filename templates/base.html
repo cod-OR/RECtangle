@@ -16,7 +16,7 @@
 				<div class="">	
 					{% if user.is_authenticated %}
 					
-					<p>Hi {{ user.username }}!  <a href="# " style="color: red">Log out</a><a href="#"  style="color: grey;">Change Password</a></p>
+					<p>Hi {{ user.username }}!  <a href="{% url 'logout' %} " style="color: red">Log out</a><a href="{% url 'password_change' %}"  style="color: grey;">Change Password</a></p>
 					{% else %}
 					<p>You are not logged in.
 					<a href="{% url 'login' %}">Log In</a></p>

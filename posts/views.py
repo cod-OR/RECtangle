@@ -11,7 +11,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class IsAllowed(LoginRequiredMixin, UserPassesTestMixin):
 	def test_func(self):
-		return True
 		return self.request.user.staff					  #admins can change staff status of any user to revoke his/her access to the site
 
 class HomePageView(IsAllowed, ListView):

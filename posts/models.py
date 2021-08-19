@@ -1,20 +1,20 @@
 from django.conf import settings
 from django.db import models
 from django.urls import reverse
-# from accounts.models import CustomUser as User
+from accounts.models import CustomUser as User
 
 class Problem(models.Model):
 
-	# def coordinators():
-	# 	people = User.objects.all()
-	# 	people_names = []
-	# 	for person in people:
-	# 		people_names.append((person.username, person.username))
-	# 	return people_names
+	def coordinators():
+		people = User.objects.all()
+		people_names = []
+		for person in people:
+			people_names.append((person.username, person.username))
+		return people_names
 
 	DIFFICULTY_CHOICES = [('A','A'), ('B','B'), ('C','C'), ('D','D'), ('E','E'), ('F','F'), ('G','G'), ('H','H')]
 	STATUS_CHOICES = [('Queued','Queued'),('Rejected','Rejected'), ('Testing','Testing'), ('Done','Done')]
-	# COORDINATOR_CHOICES = coordinators()
+	COORDINATOR_CHOICES = coordinators()
 
 	title = models.CharField(max_length = 200, null = True)
 	Description = models.TextField()
@@ -35,12 +35,12 @@ class Problem(models.Model):
 	updated = models.DateTimeField(auto_now=True , blank = True, null = True)
 
 
-	# coordinator1 = models.CharField(max_length = 10, 
-	# 							  choices=COORDINATOR_CHOICES,
-	# 							  default='A')
-	# coordinator2 = models.CharField(max_length = 10, 
-	# 							  choices=COORDINATOR_CHOICES,
-	# 							  default='A')
+	coordinator1 = models.CharField(max_length = 10, 
+								  choices=COORDINATOR_CHOICES,
+								  default='A')
+	coordinator2 = models.CharField(max_length = 10, 
+								  choices=COORDINATOR_CHOICES,
+								  default='A')
 
 	class Meta:
 		ordering = ('difficulty',)

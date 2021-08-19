@@ -1,0 +1,332 @@
+
+.proflink{
+  color: #79228c;
+}
+
+.is-pulled-right {
+  float: right !important;
+  margin-top: 10px;
+  font-family: Li;
+  font-size:15px;
+}
+
+#outer {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  padding: 10px;
+  font-size: 15px;
+}
+
+
+.wmd-panel
+{
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  min-width: 500px;
+  background-color: #FFFFFF;
+}
+
+.wmd-button-bar 
+{
+  width: 100%;
+  background-color: #FFFFFF; 
+}
+
+.wmd-input 
+{ 
+  height: 300px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.wmd-preview 
+{ 
+  background-color: #FFFFFF; 
+  display: none;
+}
+
+.wmd-button-row 
+{
+  position: relative; 
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  padding: 0px;  
+  height: 20px;
+  background-color: #FFFFFF;
+}
+
+.wmd-spacer
+{
+  width: 1px; 
+  height: 20px; 
+  margin-left: 14px;
+  
+  position: absolute;
+  background-color: #FFFFFF;
+  display: inline-block; 
+  list-style: none;
+}
+
+.wmd-button {
+    width: 20px;
+    height: 20px;
+    padding-left: 2px;
+    padding-right: 3px;
+    position: absolute;
+    display: inline-block;
+    list-style: none;
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
+#prob-detail{
+  width: 60%;
+  float: left;
+  padding-left: 20px;
+  font-size: 18 px;
+  z=101;
+}
+#markdown-form {
+  background-color: #FFFFFF;
+  z=9999
+}
+#allblocks {
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  padding: 20px;
+  font-size: 15px;
+  z=100
+}
+
+#inner {
+  text-align: center;
+  display: inline-block;
+  font-size: 25px;
+}
+
+
+table {
+  align-self: center;
+  background-color: white;
+  color: #363636;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 3px;
+}
+
+.table th {
+  color: #363636;
+  text-align: left;
+  padding: 5px;
+  text-align: center;
+}
+.section {
+  padding: 3rem 1.5rem;
+}
+
+.site-footer {
+  background-color: #838383;
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+#social-wrapper {
+  text-align: center;
+}
+
+/*Social Media Icons*/
+.social-wrapper {
+  text-align: center;
+}
+
+.social-wrapper ul li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.twitter-icon,
+.facebook-icon,
+.instagram-icon,
+.linkedin-icon,{
+  margin-top: .625em;
+  width: 40px;
+  height: 40px;
+  opacity: .6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+  border-radius: 25px;
+}
+
+.twitter-icon:hover,
+.facebook-icon:hover,
+.instagram-icon:hover,
+.linkedin-icon:hover, {
+  opacity: 1.0;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+.footer-nav p {
+  text-align: center;
+}
+
+.footer-heart{text-align:center;font-family: open sans, sans-serif;}
+
+.footer-heart a{border-bottom: 1px solid #453886;color: #453886;padding-bottom: .25em; text-decoration: none;}
+
+.footer-heart a:hover{color:#2196f3; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: .3em;
+  text-decoration: none;}
+
+.emoji{vertical-align: middle;}
+
+
+.header-fixed {
+  background-color:#292c2f;
+  box-shadow:0 1px 1px #ccc;
+  padding: 20px 40px;
+  height: 80px;
+  color: #ffffff;
+  box-sizing: border-box;
+  top:-100px;
+
+  -webkit-transition:top 0.3s;
+  transition:top 0.3s;
+}
+
+.header-fixed .header-limiter {
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*  The header placeholder. It is displayed when the header is fixed to the top of the
+  browser window, in order to prevent the content of the page from jumping up. */
+
+.header-fixed-placeholder{
+  height: 80px;
+  display: none;
+}
+
+/* Logo */
+
+.header-fixed .header-limiter h1 {
+  float: left;
+  font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+  line-height: 40px;
+  margin: 0;
+}
+
+.header-fixed .header-limiter h1 span {
+  color: #5383d3;
+}
+
+/* The navigation links */
+
+.header-fixed .header-limiter a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+  font:16px Arial, Helvetica, sans-serif;
+  line-height: 40px;
+  float: right;
+}
+
+.header-fixed .header-limiter nav a{
+
+  display: inline-block;
+  padding: 0 5px;
+  text-decoration:none;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.header-fixed .header-limiter nav a:hover{
+  opacity: 1;
+}
+
+.header-fixed .header-limiter nav a.selected {
+  color: #608bd2;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* Fixed version of the header */
+
+body.fixed .header-fixed {
+  padding: 10px 30px;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+body.fixed .header-fixed-placeholder {
+  display: block;
+}
+
+body.fixed .header-fixed .header-limiter h1 {
+  font-size: 25px;
+  line-height: 27px;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+  line-height: 17px;
+  font-size: 13px;
+}
+
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+  .header-fixed {
+    padding: 20px 0;
+    height: 75px;
+  }
+
+  .header-fixed .header-limiter h1 {
+    float: none;
+    margin: -8px 0 10px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+  }
+
+  .header-fixed .header-limiter nav {
+    line-height: 1;
+    float:none;
+  }
+
+  .header-fixed .header-limiter nav a {
+    font-size: 14px;
+  }
+
+  body.fixed .header-fixed {
+    display: none;
+  }
+
+}
+
+.notification.starter{
+  position: relative;
+  float: center;
+  margin: auto;
+  font-size: 20px;
+  padding: 10px;
+}
+

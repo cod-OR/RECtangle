@@ -7,14 +7,14 @@ class ProposeForm(forms.ModelForm):
 	Description = forms.CharField(widget=PagedownWidget())
 	class Meta:
 		model = Problem
-		fields = ['title', 'Description', 'difficulty']
+		fields = ['title', 'Description', 'difficulty', 'coordinator1', 'coordinator2']
 		fields_required = ['title', 'Description']
 
 class EditForm(forms.ModelForm):
 	Description = forms.CharField(widget=PagedownWidget())
 	class Meta:
 		model = Problem
-		fields = ['title', 'Description', 'difficulty', 'status']
+		fields = ['title', 'Description', 'difficulty',  'coordinator1', 'coordinator2', 'status']
 		fields_required = ['title', 'Description']
 
 
