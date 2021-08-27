@@ -11,18 +11,18 @@ class CommentInline(admin.TabularInline):
     extra = 0
     #extra comment rows are omited
 
-class AuthorAdmin(admin.ModelAdmin):
+class ProblemAdmin(admin.ModelAdmin):
     list_display = ('title' , 'author', 'created', 'status')
 
     # inside admin panel, all text fields will have markdown support
     formfield_overrides = {
         models.TextField: {'widget': AdminPagedownWidget },
     }
-    fields = ['title', 'author', 'Description','difficulty', 'status']
+    fields = ['title', 'author', 'Description','difficulty', 'coordinator1', 'coordinator2', 'status']
     inlines = [
         CommentInline,
     ]
 
 
-admin.site.register(Problem, AuthorAdmin)
+admin.site.register(Problem, ProblemAdmin)
 admin.site.register(Comment)

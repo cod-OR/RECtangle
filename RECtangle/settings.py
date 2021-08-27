@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from .secret import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'j^*6gi1fdbt)(akm-erutlr3v!t$f!f%y6ff5s7z5oeofv@05k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -144,10 +144,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-DEFAULT_FROM_EMAIL = 'ratnaparkhionkar@gmail.com'
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
