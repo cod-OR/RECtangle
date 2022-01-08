@@ -14,9 +14,10 @@ class Problem(models.Model):
 
 	DIFFICULTY_CHOICES = [('A','A'), ('B','B'), ('C','C'), ('D','D'), ('E','E'), ('F','F'), ('G','G'), ('H','H')]
 	STATUS_CHOICES = [('Queued','Queued'),('Rejected','Rejected'), ('Testing','Testing'), ('Done','Done')]
+
 	COORDINATOR_CHOICES = coordinators()
 
-	title = models.CharField(max_length = 200, null = True)
+	title = models.CharField(max_length = 200, null = True, unique =True )
 	Description = models.TextField()
 	author = models.ForeignKey(
 		settings.AUTH_USER_MODEL,
@@ -24,21 +25,22 @@ class Problem(models.Model):
 		on_delete=models.CASCADE,
 		null = True,
 	)
-	difficulty = models.CharField(max_length = 10, 
+
+	difficulty = models.CharField(max_length = 30,
 								  choices=DIFFICULTY_CHOICES,
 								  default='A')
-	status = models.CharField(max_length = 50, 
+	status = models.CharField(max_length = 30,
 								  choices=STATUS_CHOICES,
 								  default='Queued')
-	
+
 	created = models.DateTimeField(auto_now_add=True , blank = True, null = True)
 	updated = models.DateTimeField(auto_now=True , blank = True, null = True)
 
 
-	coordinator1 = models.CharField(max_length = 10, 
+	coordinator1 = models.CharField(max_length = 20,
 								  choices=COORDINATOR_CHOICES,
 								  default='A')
-	coordinator2 = models.CharField(max_length = 10, 
+	coordinator2 = models.CharField(max_length = 20,
 								  choices=COORDINATOR_CHOICES,
 								  default='A')
 
@@ -50,7 +52,6 @@ class Problem(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('problem_detail', args=[str(self.id)])
-
 
 
 
@@ -71,3 +72,7 @@ class Comment(models.Model):
 
 	def __str__(self):
 		return 'Comment by {} on {}'.format(self.author, self.problem)
+
+	def get_success_url(self):
+		print("Inside model!")
+		return reverse_lazy('problem_detail', kwargs={'pk': self.object.pk})

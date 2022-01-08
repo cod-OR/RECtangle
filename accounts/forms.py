@@ -9,11 +9,10 @@ class CustomUserCreationForm(UserCreationForm):
 	email = forms.EmailField(required=True)
 	class Meta(UserCreationForm):
 		model = CustomUser
-		fields = UserCreationForm.Meta.fields + ('email', )   
+		fields = UserCreationForm.Meta.fields + ('email', )
 		# we require email for password reset!
-
 
 class CustomUserChangeForm(UserChangeForm):
 	class Meta:
 		model = CustomUser
-		fields = UserChangeForm.Meta.fields 
+		fields = UserChangeForm.Meta.fields

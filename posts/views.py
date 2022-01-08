@@ -11,7 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class IsAllowed(LoginRequiredMixin, UserPassesTestMixin):
 	def test_func(self):
-		return self.request.user.staff
+		return self.request.user.is_staff
 		#admins can change staff status of any user to revoke his/her access to the site
 
 class HomePageView(IsAllowed, ListView):
@@ -62,9 +62,6 @@ class ProbDetailView(IsAllowed, FormMixin , DetailView):
 			return self.form_valid(form)
 		else:
 			return self.form_invalid(form)
-
-	def form_valid(self, form):
-		return super(ProbDetailView, self).form_valid(form)
 
 
 class DeleteProbView(IsAllowed, DeleteView):

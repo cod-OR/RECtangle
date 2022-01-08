@@ -11,21 +11,21 @@ User = get_user_model()
 admin.site.unregister(Group)
 
 class UserAdmin(BaseUserAdmin):
-	
+
 	form = CustomUserChangeForm
 	add_form = CustomUserCreationForm
 
 	# the list shown in admin panel
-	list_display = ['username' , 'post' ,'email', 'is_superuser', 'staff']
-	
+	list_display = ['username' , 'post' ,'email', 'is_staff', 'is_superuser']
+
 	list_filter = ['is_superuser', 'post']
 	fieldsets = (
-		(None, {'fields': ('username', 'email', 'password', 'post', 'is_superuser', 'staff')}),
+		(None, {'fields': ('username', 'email', 'password', 'post', 'is_superuser', 'is_staff')}),
 	)
-	
+
 	add_fieldsets = (
 		(None, {
-			'fields': ('username' , 'email', 'password1', 'password2', 'post', 'is_superuser', 'staff')}
+			'fields': ('username' , 'email', 'password1', 'password2', 'post', 'is_superuser', 'is_staff')}
 		),
 	)
 
