@@ -3,18 +3,16 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<h3 id="inner">Edit Problem</h3>
+<h3>Edit Problem</h3>
 
-<div id="outer">
-	<div id="">
-<form method="post">
-	{% csrf_token %}
-	{{ form.media }}
-	{{ form|crispy }}
-	<br>
-	<button type="submit">Propose</button>
-</form>
-</div>
+<div>
+	<form method="post">
+		{% csrf_token %}
+		<!-- {{ form.media }} -->
+		{{ form|crispy }}
+		<br>
+		<button type="submit" class="btn btn-primary proposeButton">Propose</button>
+	</form>
 </div>
 
 {% endblock content%}

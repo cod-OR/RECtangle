@@ -5,47 +5,45 @@
 
 
 
-                <div class="table is-bordered is-fullwidth " id="outer">
+                <div class="homeTable">
                     {% if all_prob_list %}
-                	<div id="inner">
-	    			<h1>Current Problems</h1>
-	    			</div>
-                        <table width="auto">
-                            <thead>
-                                <tr class="">
-                                	<th>Problem</th>
-                                	<th>Status</th>
-                                	<th>Author</th>
-                                	<th>Coordinator</th>
-                                	<th>Created</th>
-                                </tr>
-                            </thead>
-                            <tbody >
-                            	{% for problem in all_prob_list %}
-                                <tr>
-                                	<td><a href="{% url 'problem_detail' problem.pk %}">{{problem.difficulty}}  -  {{problem.title}}</a></td>
-                                	<td>{{problem.status}}</td>
-                                	<td>{{problem.author}}</td>
-                                	<td>{{problem.coordinator1}}</td>
-                                	<td>{{problem.created}}</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    <div>
+                      
+                      <h3>Current Problems</h3>
+                    
+                      <table class="table table-bordered ">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Problem</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Author</th>
+                              <th scope="col">Coordinator</th>
+                              <th scope="col">Created on</th>
+                            </tr>
+                          </thead>
+                          <tbody >
+                            {% for problem in all_prob_list %}
+                              <tr>
+                                <td><a href="{% url 'problem_detail' problem.pk %}">{{problem.difficulty}}  -  {{problem.title}}</a></td>
+                                <td>{{problem.status}}</td>
+                                <td>{{problem.author}}</td>
+                                <td>{{problem.coordinator1}}</td>
+                                <td>{{problem.created | date:"M d, Y"}}</td>
+                              </tr>
+                              {% endfor %}
+                          </tbody>
+                      </table>
                     {% else %}
-                    <h3>No problems proposed</h3>
+                      <h3>No problems proposed</h3>
                     {% endif%}
-
-                    <a href="{% url 'problem_create' %}"><button>+ Propose new Problem</button></a>
-                	</div>
+                    <a class="btn btn-primary" href="{% url 'problem_create' %}" role="button">+ Propose new Problem</a>
                 </div>
+             
 
                 <!--
                 <div class="column is-one-quarter-mobile is-pulled-right"> <h3> Recent activities </h3></div>
                 -->
 
-                </div>
+              
 
 
 {% endblock content %}

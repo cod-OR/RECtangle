@@ -2,11 +2,11 @@
 {% extends  'base.html' %}
 
 {% block content %}
-<p>Prob delete</p>
+<h3>Delete Problem</h3>
 
 <form action="" method="post">{% csrf_token %}
-	<p>Are you sure you want to delete "{{ problem.title }}"?</p>
-	<button type="submit">Delete Problem</button>
+	<p>Are you sure you want to delete problem "{{ problem.title }}"?</p>
+	<button type="submit" class="btn btn-danger proposeButton">Yes, delete</button>
 </form>
 
 {% endblock content%}
