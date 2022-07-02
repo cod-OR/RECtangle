@@ -76,7 +76,7 @@
 
 
 table {
-  align-self: center;
+  
   background-color: white;
   color: #363636;
   margin-bottom: 1.5rem;
@@ -90,7 +90,6 @@ table {
   color: #363636;
   text-align: left;
   padding: 5px;
-  text-align: center;
 }
 .section {
   padding: 3rem 1.5rem;
@@ -159,7 +158,7 @@ table {
 .header-fixed {
   background-color:#292c2f;
   box-shadow:0 1px 1px #ccc;
-  padding: 20px 40px;
+  padding: 20px 50px;
   height: 80px;
   color: #ffffff;
   box-sizing: border-box;
@@ -170,7 +169,7 @@ table {
 }
 
 .header-fixed .header-limiter {
-  max-width: 1200px;
+ 
   text-align: center;
   margin: 0 auto;
 }

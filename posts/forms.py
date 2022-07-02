@@ -7,7 +7,7 @@ class ProposeForm(forms.ModelForm):
 	def __init__(self, *args, **kwargs):
 		super(ProposeForm, self).__init__(*args, **kwargs)
 		i=0
-		placeholders=['Title','Problem Statement, without story; Constraints; Sample input and output','','','']
+		placeholders=['Title','Problem Statement, Constraints, Sample input and output. Without story','','','']
 		for visible in self.visible_fields():
 			visible.field.widget.attrs['class'] = 'form-control createFormCustomStyle'
 			visible.field.widget.attrs['placeholder'] = placeholders[i]
