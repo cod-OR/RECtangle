@@ -13,7 +13,7 @@ class Problem(models.Model):
 		return people_names
 
 	DIFFICULTY_CHOICES = [('A','A'), ('B','B'), ('C','C'), ('D','D'), ('E','E'), ('F','F'), ('G','G'), ('H','H')]
-	STATUS_CHOICES = [('Queued','Queued'),('Rejected','Rejected'), ('Testing','Testing'), ('Done','Done')]
+	STATUS_CHOICES = [('Queued','Queued'),('Rejected','Rejected'), ('Accepted','Accepted'), ('Uploaded','Uploaded')]
 
 	COORDINATOR_CHOICES = coordinators()
 

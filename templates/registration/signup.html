@@ -11,9 +11,9 @@ Go to <a href="{% url 'home' %}">Home</a>
 	{% csrf_token %}
 	{{ form|crispy }}
 	<br>
-	<button type="submit">Sign Up</button>
+	<button class="btn btn-success" type="submit">Sign Up</button>
 </form>
-<p>Already a member ? <a href="{% url 'login' %}">Login</a></p>
+<p>Already a member ? <a href="{% url 'login' %}" >Login</a></p>
 {% endif %}
 
 {% endblock content %}
