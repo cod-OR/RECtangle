@@ -9,7 +9,8 @@ class Problem(models.Model):
 		people = User.objects.all()
 		people_names = []
 		for person in people:
-			people_names.append((person.username, person.username))
+			if(person.is_staff == True):
+				people_names.append((person.username, person.username))
 		return people_names
 
 	DIFFICULTY_CHOICES = [('A','A'), ('B','B'), ('C','C'), ('D','D'), ('E','E'), ('F','F'), ('G','G'), ('H','H')]
@@ -37,12 +38,8 @@ class Problem(models.Model):
 	updated = models.DateTimeField(auto_now=True , blank = True, null = True)
 
 
-	coordinator1 = models.CharField(max_length = 20,
-								  choices=COORDINATOR_CHOICES,
-								  default='A')
-	coordinator2 = models.CharField(max_length = 20,
-								  choices=COORDINATOR_CHOICES,
-								  default='A')
+	coordinator1 = models.CharField(max_length = 20)
+	coordinator2 = models.CharField(max_length = 20)
 
 	class Meta:
 		ordering = ('difficulty',)
