@@ -8,7 +8,7 @@ Key features -
   - Anyone can come and signup, but admin permission is required to access the site
   - Coordinator and tester can be allocated to each problem
   - Every problem has status field which shows if the problem is still queued or accepted or rejected or testing ( default status is 'queued')
-  - Members can make comments (i.e. discuss) on specific problem
+  - Members can make comments (i.e. discuss) on specific problem. Problem author gets a notification when someone comments on his/her problem.
   - Markdown is supported while editing problem statement
 
 
